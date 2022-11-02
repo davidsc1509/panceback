@@ -1,11 +1,15 @@
 const { Schema, model } = require('mongoose');
 
-const hotelSchema = Schema({
+const usuarioSchema = Schema({
     nombre: {
         type: String,
         required: true,
     },
-    descripcion: {
+    correo: {
+        type: String,
+        required: true,
+    }, 
+    contrasena: {
         type: String,
         required: true,
     }, 
@@ -13,28 +17,23 @@ const hotelSchema = Schema({
         type: String,
         required: true,
     }, 
-    precio: {
-        type: Number,
-        required: true,
-    }, 
-    nroHabitaciones:{
-        type: Number,
+    celular:{
+        type: String,
         required: true,
     },
-    latitud: {
-        type: Number,
-        required: true,
-    }, 
-    longitud: {
-        type: Number,
-        required: true,
-    }, 
-    reserva: {
+    reserva:{
         type: Array,
         ref: "Reserva",
         required: false,
-    }
 
+    },
+    pedido:{
+        type: Array,
+        ref: "Pedido",
+        required: false,
+
+    }
+   
 })
 
-module.exports = model('Hotel', hotelSchema)
+module.exports = model('Usuario', usuarioSchema)

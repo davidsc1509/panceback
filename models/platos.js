@@ -8,6 +8,11 @@ const platoSchema = Schema({
     precio: {
         type: Number,
         required: true,
+    },
+    imagen:{
+        type: String,
+        required: false,
+
     }
 })
 
